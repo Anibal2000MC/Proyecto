@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/estilosGenerales.css" th:href="@{/css/estilosGenerales.css}">
+	<link rel="stylesheet" href="static/css/medicos.css" th:href="@{/css/medicos.css}">
+</head>
+
+<body>
+	<div th:replace="fragments::menu"></div>
+	<main class="altoMinimo">
+
+		<div class="cont100">
+			<div class="cont75 contSearchMedico">
+				<form id="myForm" method="post" action="/citas/crear-cita">
+					<h2>Selecciona el día y hora</h2>
+					<input type="hidden" name="type" value="register">
+					<div class="fields-wrap">
+						<div class="ninja-forms-required-items">
+							Todos los campos marcados <span>(*)</span> son obligatorios:
+						</div>
+						
+						<div class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap">
+							<label for="cmbCentroMedico" class="lbl_contactanos col-sm-4 no-left">Médicos
+								al que desea contactar <span class="ninja-forms-req-symbol"><strong>*</strong></span>
+							</label><select id="idMedico"
+								class="ninja-forms-field col-sm-8 form-control input_contactanos validar" name="idMedico"
+								required>
+								<option value="">Seleccione</option>
+								<option th:each="medico: ${medicos}" th:value="${medico.idMedico}"
+									th:text="${medico.nombreCompleto}"></option>
+							</select>
+							<div id="cmbCentroMedico_error" style="display: none;" class="ninja-forms-field-error">
+							</div>
+						</div>
+						
+						<div class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap">
+
+							<label for="txtEmail" class="lbl_contactanos col-sm-4 no-left">Día
+								<span class="ninja-forms-req-symbol"><strong>*</strong></span>
+							</label><select id="dia"
+								class="ninja-forms-field col-sm-8 form-control input_contactanos validar" name="dia"
+								required>
+								<option >Seleccione</option>
+								<option>2024-03-11</option>
+								<option>2024-03-12</option>
+								<option>2024-03-13</option>
+								<option>2024-03-14</option>
+								<option>2024-03-15</option>
+								<option>2024-03-16</option>
+							</select>
+						</div>
+						
+						<div class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap">
+							<label for="txtTelefono" class="lbl_contactanos col-sm-4 no-left">Hora <span
+									class="ninja-forms-req-symbol"><strong>*</strong></span></label><select id="hora"
+								class="ninja-forms-field col-sm-8 form-control input_contactanos validar" name="hora"
+								required>
+								<option >Seleccione</option>
+								<option>08:00</option>
+								<option>08:30</option>
+								<option>09:00</option>
+								<option>09:30</option>
+								<option>10:00</option>
+								<option>10:30</option>
+							</select>
+						</div>
+			
+						<div class="contentBtn">
+							<button type="submit" class="w-100 btn btn-lg btn-primary" data-label="registrar"
+								id="btRegistro">AGENDAR CITA</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="ImgSearchMedico">
+				<img src="https://cms-img.auna.org/Baner_interno_tablet_a544663dd3.jpg" alt="staff médico" width="100%">
+			</div>
+		</div>
+		<div class="cont75">
+			<div id="scheduleResult" class="gridMedicosFavoritos"></div>
+		</div>
+		<form id="agendar_medico_public_form" action="https://www.feodor.pe/citas/staff" method="post">
+			<input type="hidden" name="_token" value="xcv4GdMTM1F5DVzGAhWrsr683NshNcW5RJt87RUf"> <input type="hidden"
+				name="nombreClinica" id="clinicName"> <input type="hidden" name="nombreEspecialidad" id="specName">
+			<input type="hidden" name="name" id="name"> <input type="hidden" name="id_clinica" id="lugar_select"> <input
+				type="hidden" name="id_especialidad" id="especialidad_select"> <input type="hidden" name="cmp" id="cmp">
+		</form>
+	</main>
+	<div th:replace="fragments::footer"></div>
+</body>
+
+</html>

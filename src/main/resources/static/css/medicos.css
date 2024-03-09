@@ -1,0 +1,113 @@
+@charset "ISO-8859-1";
+
+main {
+	margin-bottom: 90px;
+}
+
+.cont100 {
+	width: 100%;
+	position: relative;
+}
+
+.cont100 .contSearchMedico form {
+	padding-top: 15rem;
+}
+
+.cont75 {
+	width: 75%;
+	margin: auto;
+}
+
+.cont100 .ImgSearchMedico {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	width: 100%;
+}
+
+#titulo_staff {
+	font-weight: 300; 
+	font-family: Conv_Stag-Book; 
+	color: #905b2b; 
+	font-size: 27px; 
+	background: rgba(255, 255, 255, .9); 
+	padding: 12px; display: inline-block;
+}
+.cont75 .contMedicoSearch .contmedico {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    background: #dadada;
+    border-radius: 3px;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+.cont75 .contMedicoSearch .contmedico .inputSearch-c {
+    width: 28%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont75 .contMedicoSearch .contmedico .inputSearch-c input {
+    padding: 0.4rem 0.7rem 0.4rem 1.2rem;
+    border-radius: 3px;
+    border: solid 2px #ccc;
+}
+.nameInput-staff-js{
+	margin: 1rem;
+    width: 60%;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 0.4rem 0.7rem 0.4rem 1.2rem;
+    border-radius: 3px;
+    border: solid 2px #ccc;
+}
+.lugar-medico-staff-js{
+	order-radius: 5px;
+    outline: none;
+    background: #fff !important;
+    margin: 1rem;
+    width: 60%;
+    box-sizing: border-box;
+    padding: 0.4rem 0.7rem 0.4rem 1.2rem;
+    border: solid 2px #ccc !important;
+}
+.especialidad-medico-staff-js{
+    border-radius: 5px;
+    outline: none;
+    background: #fff !important;
+    margin: 1rem;
+    width: 60%;
+    box-sizing: border-box;
+    padding: 0.4rem 0.7rem 0.4rem 1.2rem;
+    border: solid 2px #ccc !important;
+}  
+
+.btnSearch{
+     box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 16%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    }
+.btnGreen .btnSmall .js_dl{
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+    -webkit-appearance: none;
+    font-family: "StagSans-Book";
+    transition: all 0.5s;
+    color: #fff;
+    width: 5rem;
+    padding: 8px 13px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+ }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<style>
+		body {
+			width: 100vw;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-image:
+				url('https://www.sanna.pe/citas/images/sanna/inicio-citas.jpg') !important;
+		}
+
+		header {
+			background-color: white
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<br />
+		<header class="pb-2 mb-3 border-bottom fixed-top d-flex align-items-center">
+			<a href="login.jsp" class="d-flex align-items-center 
+			text-dark text-decoration-none">
+				<span class="fs-4 nav">Clínicas Feodor</span>
+			</a>
+		</header>
+
+		<div class="my-5 text-center main">
+			<div class="d-flex justify-content-center">
+
+				<div class="bg-body-tertiary p-2 rounded mt-3 shadow p-3 mb-5 bg-body-tertiary rounded w-50 ">
+					<h3>
+						Iniciar sesión - Agendamiento de citas Feodor
+						</h2>
+				</div>
+
+			</div>
+			<div class="d-flex justify-content-center">
+
+				<div class="grid">
+					<div class="bg-light">Importante</div>
+					<div class="card-body">
+						<h6>Para agendar tus citas debes iniciar sesión.</h6>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="container d-flex justify-content-center">
+				<div class="bg-body-tertiary p-2 px-4 rounded mt-3 ">
+					<br> <br>
+					<form id="myForm" method="post" action="/login/login">
+						<h3>Iniciar Sesión</h3>
+						<input hidden="true" id="token" name="token" value="516153202315641">
+						<div class="form-floating">
+							<input type="email" class="form-control" placeholder="Correo" id="usuario" name="usuario" required>
+							<label>Correo</label>
+						</div>
+						<div class="form-floating">
+							<input type="password" class="form-control mt-2" placeholder="Contraseña" id="contraseña"
+								name="contraseña" required minlength="6">
+							<label>Clave</label>
+						</div>
+						<br>
+						
+						<br>
+						<button type="submit" class="w-100 btn btn-lg btn-primary">Ingresar</button>
+						<a href="/paciente/registro" class="link">Regístrate</a>
+					</form>
+				</div>
+			</div>
+			<div th:if="${param.error}" class="alert alert-danger mt-3" role="alert">
+                    Credenciales incorrectas. Inténtalo de nuevo.
+                </div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+</body>
+
+</html>

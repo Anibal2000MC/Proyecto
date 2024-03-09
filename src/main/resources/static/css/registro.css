@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+
+body {
+	width: 100vw;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image:
+		url('https://www.sanna.pe/citas/images/sanna/inicio-citas.jpg')
+		!important;
+}
+
+header {
+	background-color: white
+}
+
+.containerForm {
+	width: 50%
+}
+
+.registerForm {
+	font-family: "StagSans-Book";
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}

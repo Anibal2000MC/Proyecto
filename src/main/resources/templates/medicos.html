@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/estilosGenerales.css" th:href="@{/css/estilosGenerales.css}">
+	<link rel="stylesheet" href="static/css/medicos.css" th:href="@{/css/medicos.css}">
+</head>
+
+<body>
+	<div th:replace="fragments::menu"></div>
+	<main class="altoMinimo">
+
+		<div class="cont100">
+			<div class="cont75 contSearchMedico">
+
+				<form id="buscar_medico_public_form" method="get" action="/medicos/buscar" novalidate="novalidate">
+					<div style="margin-top: -80px; margin-bottom: 20px;">
+						<h1 id="titulo_staff">Staff Médico FEODOR</h1>
+					</div>
+					<input type="hidden" name="busquedaRealizada" th:value="${busquedaRealizada}">
+
+					<div class="contMedicoSearch">
+						<h2 class="title-busca-medico">Buscar médico por:</h2>
+						<div class="contmedico">
+							<div class="inputSearch-c">
+								<label for="">Lugar</label>
+								<select class="form-control especialidad-medico-staff-js" name="idClinica">
+									<option>Selecciona</option>
+									<option th:each="clinica: ${clinicas}" th:value="${clinica.idClinica}"
+										th:text="${clinica.nombre}"></option>
+								</select>
+							</div>
+							<div class="inputSearch-c">
+								<label for="">Especialidad</label>
+								<select class="form-control especialidad-medico-staff-js" name="idEspecialidad">
+									<option>Selecciona</option>
+									<option th:each="especialidad: ${especialidades}"
+										th:value="${especialidad.idEspecialidad}" th:text="${especialidad.nombre}">
+									</option>
+								</select>
+							</div>
+							<div class="btnSearch">
+								<button type="submit" id="searchMedicButton" data-label=""
+									class="btn btnGreen btnSmall js_dl bg-success-subtle">Buscar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<div th:if="${param.sinResultados}" class="alert alert-warning mt-3" role="alert">
+					No se encontraron resultados para la búsqueda.
+			</div>
+			<div class="contMedicosEncontrados" th:if="${busquedaRealizada}">
+				<h2>Lista de Médicos Encontrados</h2>
+				<ul>
+					<!-- Iterar sobre la lista de médicos y mostrar la información -->
+					<li th:each="medico : ${medicos}">
+						<p>Nombre: <span th:text="${medico.nombreCompleto}"></span></p>
+						<p>Especialidad: <span th:text="${medico.especialidad.nombre}"></span></p>
+						<!-- Agrega más información del médico según tu modelo -->
+					</li>
+				</ul>
+			</div>
+			<div class="medicosNoEncontrados" th:unless="${busquedaRealizada}" style="display: none;">
+				<h2>No hay médicos disponibles para la búsqueda especificada.</h2>
+			</div>
+		</div>
+		<div class="ImgSearchMedico">
+			<img src="https://cms-img.auna.org/Baner_interno_tablet_a544663dd3.jpg" alt="staff médico" width="100%">
+		</div>
+		</div>
+		<div class="cont75">
+			<div id="scheduleResult" class="gridMedicosFavoritos"></div>
+		</div>
+		<form id="agendar_medico_public_form" action="https://www.feodor.pe/citas/staff" method="post">
+			<input type="hidden" name="_token" value="xcv4GdMTM1F5DVzGAhWrsr683NshNcW5RJt87RUf"> <input type="hidden"
+				name="nombreClinica" id="clinicName"> <input type="hidden" name="nombreEspecialidad" id="specName">
+			<input type="hidden" name="name" id="name"> <input type="hidden" name="id_clinica" id="lugar_select"> <input
+				type="hidden" name="id_especialidad" id="especialidad_select"> <input type="hidden" name="cmp" id="cmp">
+		</form>
+
+		<div class="modalWindow modal-cv">
+			<!--CONTENT-MODAL-->
+			<div class="boxModal contentModal">
+				<!--BTN-MODAL-->
+				<div class="btnClose cerrar">
+					<i class="fa fa-times"></i>
+				</div>
+				<!--END-BTN-MODAL-->
+				<div class="contModal"></div>
+			</div>
+			<!--END-MODAL-CONTENT-->
+		</div>
+	</main>
+	<div th:replace="fragments::footer"></div>
+
+</body>
+
+</html>

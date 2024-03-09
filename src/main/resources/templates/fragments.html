@@ -1,0 +1,82 @@
+	<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="html_head">
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/estilosGenerales.css" th:href="@{/css/estilosGenerales.css}">
+</head>
+
+<body>
+	<div th:fragment="menu">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="home"><img style="width: 150px" src="static/images/logo_1.png"
+						th:src="@{/images/logo_1.png}" alt="logo" /></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="d-flex flex-row-reverse" id="navbarSupportedContent">
+					<ul class="navbar-nav mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active" aria-current="page" href="/home">Inicio</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="/citas/cita">Citas</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="/citas/clinicas">Clínicas</a>
+						</li>
+						<li class="nav-item"><a class="nav-link " href="/citas/medicos" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								Médicos </a></li>
+						<li class="nav-item"><a class="nav-link " href="/citas/contactanos" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false"> Contáctanos </a></li>
+						<li class="m-2 btn btn-dark" th:if="${session.usuario != null}">
+							<form th:action="@{/logout}" method="post">
+								<input type="submit" class="btn-logout"  value="Cerrar sesión" />
+							</form>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div th:fragment="footer">
+		<footer>
+
+			<div class="row">
+				<div class="col-md-4">
+					<img class="img-footer"
+						src="https://cc834f82.rocketcdn.me/wp-content/uploads/2023/06/Cateterismo-Cardiaco-%C2%BFQue-es-y-para-que-sirve-scaled.webp" />
+				</div>
+				<div class="col-md-4">
+					<div class="footer-content">
+						<div class="footer-column">
+							<ul class="footer-ul">
+								<li class="my-1"><a class="link-footer" href="/home">Inicio</a></li>
+								<li class="my-1"><a class="link-footer" href="/citas/cita">Citas</a></li>
+								<li class="my-1"><a class="link-footer" href="/citas/clinicas">Clínicas</a>
+								</li>
+								<li class="my-1"><a class="link-footer" href="/citas/medicos">Médicos</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="footer-content">
+						<div class="footer-column">
+							<h4 class="text-center">Estamos para ayudarte:</h4>
+							<div class="my-4">
+								<a class="btn bg-primary-subtle" href="/citas/contactanos">Contactanos</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

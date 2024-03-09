@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/estilosGenerales.css" th:href="@{/css/estilosGenerales.css}">
+	<link rel="stylesheet" href="static/css/registro.css" th:href="@{/css/registro.css}">
+</head>
+
+<body>
+	<header class="pb-2 mb-3 border-bottom fixed-top d-flex align-items-center">
+		<a href="login.jsp" class="d-flex align-items-center 
+			text-dark text-decoration-none">
+			<span class="fs-4 nav">Clínicas Feodor</span>
+		</a>
+	</header>
+	<div class="my-5 text-center main">
+		<div class="d-flex justify-content-center">
+
+			<div class="bg-body-tertiary p-2 rounded mt-3 shadow p-3 mb-5 bg-body-tertiary rounded w-50 ">
+				<h3>
+					Registro - Agendamiento de citas Feodor
+					</h2>
+			</div>
+		</div>
+		<div class="w-100 d-flex justify-content-center">
+			<div class=" d-flex justify-content-center">
+
+					<form id="myForm" method="post" action="/paciente/registro">
+						
+						<div class="contForm">
+							<h3 class="titleForm">Datos Personales</h3>
+
+							<div class="boxFormOne">
+								<div class="formOne">
+									<input type="text" id="nombres" name="nombres" data-label="nombre"
+										class="form-control mt-3" placeholder="Nombres" required>
+								</div>
+								<div class="formOne">
+									<input type="text" id="apellidos" name="apellidos" data-label="apellidos"
+										class="form-control mt-3" placeholder="Apellidos" required>
+								</div>
+							</div>
+							<div class="boxFormOne">
+								<div class="formOne">
+									<input type="number" id="nDocumento" name="nDocumento" data-label="numero-documento"
+										class="form-control mt-3" placeholder="Número documento" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select name="txtGenero" id="genero" data-label="sexo-" class="form-select mt-3"
+									required>
+									<option value="M">Masculino</option>
+									<option value="F">Femenino</option>
+								</select>
+							</div>
+							<div class="col">
+								<input type="number" class="form-control mt-3" placeholder="Edad" aria-label="Last name"
+									name="edad" id="edad">
+							</div>
+						</div>
+
+
+						<div class="contForm">
+							<h3 class="titleForm">Credenciales</h3>
+							<div class="boxFormOne">
+								<div class="input-group has-validation">
+
+									<input type="email" class="form-control" id="nombreUsuario"
+										name="nombreUsuario" placeholder="usuario@email.com"
+										aria-describedby="inputGroupPrepend" required>
+
+								</div>
+								<div class="formOne">
+									<p class="label-instruction mt-3">Crea tu contraseña usando
+										solo números</p>
+								</div>
+							</div>
+							<div class="boxFormTwo">
+								<div class="formTwo">
+									<div class="input-group">
+										<input type="password" id="contraseña" name="contraseña" data-label="contrasenia"
+											class="form-control" placeholder="Contraseña" maxlength="6" required> <span
+											class="input-group-text" id="contraseña"
+											onclick="togglePassword('clave')"> <i class="bi bi-eye"></i>
+										</span>
+									</div>
+								</div>
+								<div class="formTwo">
+									<div class="input-group">
+										<input type="password" id="confirmar_clave" name="txtClave2"
+											class="form-control mt-3" placeholder="Repetir contraseña" maxlength="6"
+											required> <span class="input-group-text" id="showHideConfirmPassword"
+											onclick="togglePassword('confirmar_clave')"> <i class="bi bi-eye"></i>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<br> <br>
+
+						<div class="contCheckUltimo" style="padding: .5rem;">
+							Cláusula informativa de <a class="buttonGreen botonModalTerminos js_dl"
+								data-label="proteccion-de-datos-personales"> Protección de
+								Datos Personales </a>
+						</div>
+
+						<div class="contCheckUltimo" style="padding: .5rem;" id="radioButtonAcepto">
+							<div class="boxLeidoTerminos">
+								He leído y acepto el tratamiento de mis datos personales para
+								&nbsp; <a class="buttonGreen botonModalAceptoTerminos js_dl"
+									data-label="finalidades-adicionales"> finalidades
+									adicionales </a>
+							</div>
+							<div class="boxRadioButtonTerminos">
+								<label class="radioButtonAcepto js_dl" for="siacepto" data-label="tratamiento-datos">
+									<span class="radioPersonalizado"></span> <input id="siacepto" name="aceptoleido"
+										type="radio"> SI
+								</label> <label class="radioButtonAcepto js_dl" for="noacepto"
+									data-label="tratamiento-datos"> <span class="radioPersonalizado"></span> <input
+										id="noacepto" name="aceptoleido" type="radio"> NO
+								</label>
+							</div>
+						</div>
+						<div class="gridChek">
+							<label class="checkCamp" for="chekear"> <input type="checkbox" id="chekear" name="terminos">
+								<span class="boxCheck js_dl" data-label="acepto-terminos"> <i class="fas fa-check"></i>
+								</span> <span>Acepto los términos y condiciones de FEODOR</span>
+							</label>
+						</div>
+
+						<div class="contentBtn">
+							<button type="submit" class="w-100 btn btn-lg btn-primary" data-label="registrar"
+								id="btRegistro">REGISTRAR</button>
+						</div>
+						<div class="contText">
+							<p class="txtBlack btnText txtSmall txtUnderline">
+								<a href="login.jsp"><span class="verde">Iniciar
+										Sesión</span></a>
+							</p>
+						</div>
+					</form>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

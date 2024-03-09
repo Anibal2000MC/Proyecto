@@ -1,0 +1,155 @@
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0
+}
+.central{
+	font-size: large;
+	color: rgb(0, 128, 255);
+}
+body {
+	background-color: #fff;
+	width: 100%
+}
+main{
+	margin-bottom: 20px;
+}
+
+.container-home {
+	justify-content: flex-end;
+	width: 100%;
+}
+
+.container-img {
+	width: 45%;
+}
+
+.container-link {
+	width: 55%;
+}
+
+.section-columns {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.border {
+	border: 1px solid black
+}
+
+
+footer {
+	box-sizing: border-box;
+	border: 0;
+	margin-top: 1;
+	padding: 0;
+	font-family: "Conv_Stag-Book";
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(90, 157, 207);
+	color: white;
+	text-align: center;
+}
+
+.cont-footer {
+	font-family: "Conv_Stag-Book";
+	box-sizing: border-box;
+	border: 0;
+	padding: 0;
+	margin: auto;
+	display: flex;
+	width: 720px;
+}
+
+.column-footer {
+	font-family: "Conv_Stag-Book";
+	box-sizing: border-box;
+	border: 0;
+	margin: 0;
+	width: calc(100%/ 4);
+	padding: 0 1rem;
+}
+
+.col {
+	font-family: "Conv_Stag-Book";
+	box-sizing: border-box;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.img-footer {
+	padding: 10px;
+	width: 80%;
+	height: 80%;
+}
+
+h5 {
+	text-align: left;
+}
+
+.icon-style {
+	font-size: 30px;
+	padding: 5px;
+}
+
+.footer-content {
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.footer-column {
+	padding-top: 5%;
+}
+
+ul.footer-ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.footer-ul li {
+	font-size: 12px;
+	line-height: 1.5em;
+	text-decoration: underline;
+}
+
+ul.footer-ul li:hover {
+	font-size: 11px;
+	line-height: 1.5em;
+	text-decoration: underline;
+	color: rgb(18, 18, 82);
+}
+
+.link {
+	font-size: 15px;
+	padding-bottom: 5px;
+	text-decoration: underline;
+	color: white;
+}
+
+.link-footer {
+	font-size: 15px;
+	padding-bottom: 5px;
+	text-decoration: none !important;
+	color: white;
+}
+
+.link:hover {
+	font-size: 15px;
+	color: rgb(7, 7, 117);
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+
+.btn-logout{
+	background-color:transparent;
+	 color:white;
+}

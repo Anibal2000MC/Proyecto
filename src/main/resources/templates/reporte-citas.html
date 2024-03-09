@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/estilosGenerales.css" th:href="@{/css/estilosGenerales.css}">
+</head>
+
+<body>
+	<div th:replace="fragments-staff::menu"></div>
+	<div class="container mt-5">
+		<h1 class="mt-5">Reporte de citas</h1>
+		<div class="row mb-3">
+			<div class="col-md-12">
+				<form action="/report/reporte-citas" method="post">
+					<label for="idMedico">ID del médico:</label>
+					<input type="text" id="idMedico" name="idMedico" required>
+					<button type="submit">Buscar</button>
+				</form>
+				<form action="/report/reporte-citas" method="get">
+					<button type="submit">Borrar busqueda</button>
+				</form>
+				<form action="/report/reporte-citas-por-medico" method="get" class="float-right">
+					<button type="submit" class="btn btn-secondary">Generar Reporte</button>
+				</form>
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Id de Cita</th>
+					<th scope="col">Médico</th>
+					<th scope="col">Paciente</th>
+					<th scope="col">Día</th>
+					<th scope="col">Hora</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Iterar sobre la lista de citas y mostrar cada una -->
+				<tr th:each="cita : ${citas}">
+					<td th:text="${cita.idCita}"></td>
+					<td th:text="${cita.nombreMedico}"></td>
+					<td th:text="${cita.nombrePaciente}"></td>
+					<td th:text="${cita.dia}"></td>
+					<td th:text="${cita.hora}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="card text-center">
+		<div class="card-header">Footer</div>
+		<div class="card-body">
+			<h5 class="card-title">Clínicas Feodor Lynen</h5>
+			<p class="card-text">Creado y soportado por AMC</p>
+
+		</div>
+		<div class="card-footer text-muted bg-dark text-light"><strong>2024</strong></div>
+	</div>
+</body>
+
+</html>

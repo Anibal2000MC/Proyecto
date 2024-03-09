@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<!-- Enlace a Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/estilosGenerales.css" th:href="@{/css/estilosGenerales.css}">
+</head>
+
+<body>
+	<div th:replace="fragments::menu"></div>
+	<div>
+		<main>
+			<div class="container-home d-flex">
+				<div class=" container-img">
+					<img src="https://www.lavanguardia.com/andro4all/hero/2018/01/2018-es-un-buen-ao-para-que-empieces-a-pagar-por-las-apps-en-Android.jpg?width=1200"
+						alt="" style="width: 100%">
+				</div>
+
+				<div class=" container-link d-flex">
+					<div class="col border text-center bg-info-subtle" style="padding-top: 18%">
+						<h1>¡Evita las colas!</h1>
+						<h3>Agenda y paga desde nuestra APP FEODOR</h3>
+						<a href="https://play.google.com/store/games?hl=es_PE&gl=US">
+							<button class="btn btn-light btn-lg">Descarga la
+								APP aquí</button>
+						</a>
+					</div>
+					<div class="col border bg-info text-center d-flex align-items-center justify-content-center">
+						<div class="">
+							<button class="btn btn-light btn-lg" type="button">Pide
+								tu cita</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div class="container-home">
+			<div class="section-columns">
+				<div class="col-sm-4 col-md-3 bg-secondary-subtle mx-3 rounded-4 p-3">
+					<a class="titulos_centrales_home" href="/citas/clinicas">
+						<h2 class="titulo_central text-success">
+							Red de Clínicas<i class=""></i>
+						</h2>
+					</a>
+					<div class="descripcion_central h_descripcion_central">
+						<p class="parrafo_decripcion_central">La red privada de salud
+							más importante del país, con presencia a nivel nacional, para
+							brindarte la atención que tu salud merece.</p>
+					</div>
+					<div class="img_desc_central row">
+						<img data-src="https://www.sanna.pe/public/Images/Paginas/red_sanna_featimage.png"
+							class="lozad attachment-post-thumbnail size-post-thumbnail wp-post-image"
+							alt="Red de Clínicas"
+							src="https://www.sanna.pe/public/Images/Paginas/red_sanna_featimage.png" data-loaded="true"
+							style="filter: blur(0px);">
+					</div>
+
+					<div>
+						<div id="divCentros" style="cursor: pointer;">
+							<div class="col-sm-10">
+								<p class="subtitulos_centrales">Centros Clínicos</p>
+							</div>
+							<div class="col-sm-2"></div>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="col-sm-4 col-md-3 bg-secondary-subtle mx-3 rounded-4 p-3">
+					<a class="titulos_centrales_home" href=""
+						onclick="fnInsertDataLayer('Servicios', 'https://www.sanna.pe/sobre-sanna/servicios')">
+						<h2 class="titulo_central text-success">Servicios</h2>
+					</a>
+					<div class="h_descripcion_central descripcion_central">
+						<p class="parrafo_decripcion_central">
+							<span>Ponemos a tu disposición distintos servicios para
+								atender tus necesidades de salud.</span>
+						</p>
+					</div>
+
+					<div class="content-items-serv">
+						<p class="subtitulos_centrales no-left f-left no-bottom">Personas</p>
+						<div class="clear"></div>
+						<div class="col-sm-12">
+							<p>
+								<a class="items_subtitulos_centrales text-success" href="javascript:void(0);"
+									onclick="fnInsertDataLayer('FEODOR \ Médicos a Domicilio', 'https://www.sanna.pe/servicios/sanna-medicos-a-domicilio')"
+									data="medicos-a-domicilio">FEODOR \ Médicos a Domicilio</a>
+							</p>
+							<p>
+								<a class="items_subtitulos_centrales text-success" href="javascript:void(0);"
+									onclick="fnInsertDataLayer('FEODOR \ Ambulancias', 'https://www.sanna.pe/servicios/sanna-ambulancias')"
+									data="ambulancias">FEODOR \ Ambulancias</a>
+							</p>
+							<p>
+								<a class="items_subtitulos_centrales text-success" href="javascript:void(0);"
+									onclick="fnInsertDataLayer('FEODOR \ Nutricionistas a Domicilio', 'https://www.sanna.pe/servicios/sanna-nutricionistas-a-domicilio')"
+									data="nutricionistas-a-domicilio">FEODOR \ Nutricionistas a
+									Domicilio</a>
+							</p>
+							<p>
+								<a class="items_subtitulos_centrales text-success" href="javascript:void(0);"
+									onclick="fnInsertDataLayer('FEODOR \ Dr. Online', 'https://www.sanna.pe/servicios/sanna-dr-online')"
+									data="dr-online">FEODOR \ Dr. Online</a>
+							</p>
+						</div>
+					</div>
+					<div class="content-items-serv">
+						<p class="subtitulos_centrales no-left f-left no-bottom">Empresas</p>
+						<div class="clear"></div>
+						<div class="col-sm-12">
+							<p>
+								<a class="items_subtitulos_centrales text-success" href="javascript:void(0);"
+									onclick="fnInsertDataLayer('FEODOR \ Seguridad y Salud Ocupacional', 'https://www.sanna.pe/servicios/sanna-seguridad-y-salud-ocupacional')"
+									data="salud-ocupacional ">FEODOR \ Seguridad y Salud
+									Ocupacional</a>
+							</p>
+							<p>
+								<a class="items_subtitulos_centrales text-success" href="javascript:void(0);"
+									onclick="fnInsertDataLayer('FEODOR \ Tópicos en empresas', 'https://www.sanna.pe/servicios/sanna-topicos-en-empresas')"
+									data="topicos-en-empresas ">FEODOR \ Tópicos en empresas</a>
+							</p>
+							<p>
+								<a class="items_subtitulos_centrales text-success" href="javascript:void(0);"
+									onclick="fnInsertDataLayer('FEODOR \ Control de Ausentismo', 'https://www.sanna.pe/servicios/sanna-control-de-ausentismo')"
+									data="sanna-control-de-ausentismo text-success">FEODOR \
+									Control de Ausentismo</a>
+							</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-3 bg-secondary-subtle mx-3 rounded-4 p-3">
+					<a class="titulos_centrales_home" href="/citas/medicos">
+						<h2 class="titulo_central text-success">
+							Médicos<i class=""></i>
+						</h2>
+					</a>
+					<div class="descripcion_central h_descripcion_central">
+						<p class="parrafo_decripcion_central">
+							<span>El talento médico que tu salud merece: un selecto
+								equipo de profesionales que destaca entre los mejores del país.</span>
+						</p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="container-home"></div>
+		<div class="container-home"></div>
+	</div>
+	<div th:replace="fragments::footer"></div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+</body>
+
+</html>

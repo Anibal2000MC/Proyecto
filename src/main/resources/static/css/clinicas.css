@@ -1,0 +1,55 @@
+@charset "ISO-8859-1";
+.contenedor_general {
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	font-family: Conv_Gotham-Book;
+	line-height: 1.42857143;
+	color: #333;
+	font-size: 12px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	max-width: 100%;
+	width: 95% !important;
+}
+
+.titulo_pagina {
+	font-size: 33px;
+	color: #905b2b;
+	font-family: Conv_Stag-Book;
+}
+
+.descripcion_pagina {
+	color: #7e7f80;
+	font-size: 13px;
+	font-family: Conv_Gotham-Book;
+	line-height: 20px;
+}
+
+.subt {
+	color: #7e7f80;
+	font-size: 28px;
+	font-family: Conv_Gotham-Medium;
+	border-bottom: 1px solid #bebebf;
+	padding-bottom: 10px;
+}
+
+.link_item_red {
+	text-decoration: underline;
+	color: #00a850;
+}
+
+.item_clinica_red {
+	padding-left: 6px;
+}
+
+.titulo_items_clinicas {
+	color: #00a850;
+	font-size: 18px;
+	font-family: Conv_Gotham-Medium;
+	margin-bottom: 0;
+	text-decoration: none;
+}
+
+main {
+	margin-bottom: 30px
+}

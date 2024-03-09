@@ -1,0 +1,42 @@
+	<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="html_head">
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/estilosGenerales.css" th:href="@{/css/estilosGenerales.css}">
+</head>
+
+<body>
+	<div th:fragment="menu">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="home"><img style="width: 150px" src="static/images/logo_1.png"
+						th:src="@{/images/logo_1.png}" alt="logo" /></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="d-flex flex-row-reverse" id="navbarSupportedContent">
+					<ul class="navbar-nav mb-2 mb-lg-0">
+						
+						<li class="nav-item"><a class="nav-link" href="/report/reporte-citas">Reportes</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="/registros/listRegistros">Corrreos</a>
+						</li>
+						<li class="m-2 btn btn-dark" th:if="${session.usuario != null}">
+							<form th:action="@{/logout}" method="post">
+								<input type="submit" class="btn-logout"  value="Cerrar sesión" />
+							</form>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	</div>
+</body>
+
+</html>

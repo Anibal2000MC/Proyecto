@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="static/css/estilosGenerales.css" th:href="@{/css/estilosGenerales.css}">
+	<link rel="stylesheet" href="static/css/contactanos.css" th:href="@{/css/contactanos.css}">
+	<style>
+		body {
+			width: 100vw;
+			height: 100%;
+			background-color: white;
+		}
+
+		header {
+			background-color: white
+		}
+
+		.containerForm {
+			width: 50%
+		}
+
+		.registerForm {
+			font-family: "StagSans-Book";
+			border: 0;
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
+
+		.field-wrap {
+			-webkit-text-size-adjust: 100%;
+			-webkit-tap-highlight-color: transparent;
+			line-height: 1.42857143;
+			font-family: Conv_Gotham-Book;
+			font-size: 14px;
+			color: #7e7f80;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div th:replace="fragments::menu"></div>
+	<main>
+		<div class="row banner-page-section py-5" style="display: block">
+			<img class="img_detalle_clinica" id="img_detalle_contacto"
+				src="https://www.sanna.pe/public/Images/Paginas/20190405082259_ZVXjLEFLuc.jpg" style="width: 100%;">
+		</div>
+		<div class=" d-flex justify-content-center">
+
+			<div class="w-50">
+				<div class="ninja-forms-cont">
+					<div class="ninja-forms-form-wrap">
+						<div id="form_response" style="display: none;">
+							<p
+								style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small; background-color: rgb(255, 255, 255);">
+								<span
+									style="color: rgb(126, 127, 128); font-family: Conv_Gotham-Book; font-size: 18px;">Gracias
+									por escribirnos.</span><br
+									style="box-sizing: border-box; color: rgb(126, 127, 128); font-family: Conv_Gotham-Book; font-size: 18px;">
+								<span
+									style="color: rgb(126, 127, 128); font-family: Conv_Gotham-Book; font-size: 18px;">Revisaremos
+									tu consulta y nos pondremos en contacto contigo.</span>
+							</p>
+						</div>
+						<form id="myForm" method="post" action="/registros/crearRegistro">
+							<input type="hidden" name="type" value="register">
+							<div class="fields-wrap">
+								<div class="ninja-forms-required-items">
+									Todos los campos marcados <span>(*)</span> son obligatorios:
+								</div>
+								<div class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap">
+									<label for="txtNombre" class="lbl_contactanos col-sm-4 no-left">Nombres
+										<span class="ninja-forms-req-symbol"><strong>*</strong></span>
+									</label><input id="nombres" type="text"
+										class="ninja-forms-field col-sm-8 form-control input_contactanos validar alphaonly"
+										maxlength="250" name="nombres" autocomplete="off" required>
+									<div id="txtNombre_error" style="display: none;" class="ninja-forms-field-error">
+									</div>
+								</div>
+								<div class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap">
+									<label for="txtApellidos" class="lbl_contactanos col-sm-4 no-left">Apellidos <span
+											class="ninja-forms-req-symbol"><strong>*</strong></span></label><input
+										id="txtApellidos" type="text"
+										class="ninja-forms-field col-sm-8 form-control input_contactanos validar alphaonly"
+										maxlength="250" name="apellidos" required>
+									<div id="txtApellidos_error" style="display: none;" class="ninja-forms-field-error">
+									</div>
+								</div>
+								<div class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap">
+									<label for="cmbCentroMedico" class="lbl_contactanos col-sm-4 no-left">Centro Médico
+										al que desea contactar <span
+											class="ninja-forms-req-symbol"><strong>*</strong></span>
+									</label><select id="cmbCentroMedico"
+										class="ninja-forms-field col-sm-8 form-control input_contactanos validar"
+										name="clinica" required>
+										<option value="">Seleccione</option>
+										<option th:each="clinica: ${clinicas}" th:value="${clinica.nombre}"
+											th:text="${clinica.nombre}"></option>
+									</select>
+									<div id="cmbCentroMedico_error" style="display: none;"
+										class="ninja-forms-field-error"></div>
+								</div>
+								<div class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap">
+
+									<label for="txtEmail" class="lbl_contactanos col-sm-4 no-left">Email
+										<span class="ninja-forms-req-symbol"><strong>*</strong></span>
+									</label><input id="txtEmail" type="text" name="email"
+										class="ninja-forms-field col-sm-8 form-control input_contactanos emailonly"
+										maxlength="250" required>
+									<div id="txtEmail_error" style="display: none;" class="ninja-forms-field-error">
+									</div>
+								</div>
+								<div class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap">
+									<label for="txtTelefono" class="lbl_contactanos col-sm-4 no-left">Celular <span
+											class="ninja-forms-req-symbol"><strong>*</strong></span></label><input
+										id="txtTelefono" type="text" name="celular"
+										class="ninja-forms-field col-sm-8 form-control input_contactanos validar numericonly"
+										maxlength="9" required>
+									<div id="txtTelefono_error" style="display: none;" class="ninja-forms-field-error">
+									</div>
+								</div>
+								<div class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap">
+									<label for="cmbMotivoConsulta" class="lbl_contactanos col-sm-4 no-left">Motivo de
+										Consulta <span class="ninja-forms-req-symbol"><strong>*</strong></span>
+									</label><select id="cmbMotivoConsulta" name="motivo"
+										class="ninja-forms-field col-sm-8 form-control input_contactanos validar"
+										required>
+										<option value="">Seleccione</option>
+										<option value="1">Staff de médicos</option>
+										<option value="2">Especialidades</option>
+										<option value="3">Procesos de atención</option>
+										<option value="4">Clínicas y centros médicos</option>
+										<option value="5">Servicios para empresas</option>
+										<option value="6">Otros</option>
+										<option value="7">Felicitaciones</option>
+									</select>
+									<div id="cmbMotivoConsulta_error" style="display: none;"
+										class="ninja-forms-field-error"></div>
+								</div>
+								<div
+									class="field-wrap text-wrap label-above col-sm-8-wrap form-control-wrap textarea-wrap">
+									<label for="txtConsulta" class="col-sm-9 no-left">Consulta
+										o comentarios <span class="ninja-forms-req-symbol"><strong>*</strong></span>
+									</label>
+									<textarea id="txtConsulta" name="consulta"
+										class="ninja-forms-field col-sm-8 form-control validar" maxlength="2500"
+										style="resize: none;" required></textarea>
+									<div id="txtConsulta_error" style="display: none;" class="ninja-forms-field-error">
+									</div>
+								</div>
+
+								<div class="contentBtn">
+									<button type="submit" class="w-100 btn btn-lg btn-primary" data-label="registrar"
+										id="btRegistro">ENVIAR</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</main>
+	<div th:replace="fragments::footer"></div>
+
+</body>
+
+</html>

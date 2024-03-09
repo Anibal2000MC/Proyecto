@@ -1,0 +1,34 @@
+@charset "ISO-8859-1";
+body {
+	width: 100vw;
+	height: 100%;
+	background-color: white;
+}
+
+header {
+	background-color: white
+}
+
+.containerForm {
+	width: 50%
+}
+
+.registerForm {
+	font-family: "StagSans-Book";
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.field-wrap {
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	line-height: 1.42857143;
+	font-family: Conv_Gotham-Book;
+	font-size: 14px;
+	color: #7e7f80;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
